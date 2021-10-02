@@ -1,0 +1,25 @@
+<html>
+     <head> 
+         <script type="text/javascript"> 
+         function calculatefare() 
+         { var subTotal=0.0; var pricePerFifthMile=0.50;
+             var dropOffCharge=2.50; var overTwoPassengerCharge=2.00; 
+             var tripDistance=Number(document.getElementById("distance").value);
+              var passengers=Number(document.getElementById("passengers").value); 
+             
+        if (passengers>2) { subTotal=overTwoPassengerCharge(passengers-2); }
+
+        subTotal+=parseInt(tripDistance)*pricePerFifthMile;
+         subTotal+=dropOffCharge;
+          document.getElementById('price').innerHTML=" $"+subTotal.toFixed(2); }
+        </script>
+            </head> 
+            <body> 
+                <h1>Calculate Cab Fare</h1>
+                 <table><tr><td> Distance to travel (Miles): <br> Number of passengers : <br>
+                     <button id="first" type="button" onClick="javascript:calculatefare()">Calculate Fare:</button> </td> <td> 
+                         <input id="distance" type="text" name="distance" value="1" /><br> <input id="passengers" type="text" name="passengers" value="1" /><br> 
+                         <div id="price" > $00.00</div> </td></tr>
+                         </table> 
+                        </body>
+ </html>
